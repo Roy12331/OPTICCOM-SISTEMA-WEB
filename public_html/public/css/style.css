@@ -1,0 +1,78 @@
+/* NUEVA PALETA DE COLORES (Naranja, Negro, Blanco)
+  Inspirada en Win.pe y en el logo de Opticcom
+*/
+:root {
+  --opticcom-primary: #fd7e14; /* Naranja (Color principal de acción) */
+  --opticcom-dark: #212529;   /* Negro/Gris oscuro (Para textos y fondos) */
+  --opticcom-light: #f8f9fa;  /* Blanco/Gris claro (Para fondos) */
+}
+
+/* --- Forzamos la paleta de Bootstrap --- */
+body {
+  /* Forzamos los colores raíz de Bootstrap a ser los nuestros */
+  --bs-primary: var(--opticcom-primary) !important;
+  --bs-success: var(--opticcom-primary) !important; /* El éxito también es naranja */
+  --bs-dark: var(--opticcom-dark) !important;
+  --bs-light: var(--opticcom-light) !important;
+}
+
+/* --- Sobrescritura de Componentes --- */
+
+/* Botones Principales (Ahora Naranjas) */
+.btn-primary, 
+.btn-primary:hover, 
+.btn-primary:active,
+.btn-success, 
+.btn-success:hover, 
+.btn-success:active {
+  background-color: var(--opticcom-primary) !important;
+  border-color: var(--opticcom-primary) !important;
+  color: #fff !important; 
+}
+.btn-primary:hover {
+  background-color: #e67312 !important;
+  border-color: #d96d11 !important;
+}
+
+/* Fondos (Primario ahora es Naranja, Oscuro es Negro) */
+.bg-primary {
+  background-color: var(--opticcom-primary) !important;
+}
+.bg-dark {
+  background-color: var(--opticcom-dark) !important;
+}
+
+/* Textos */
+.text-primary {
+  color: var(--opticcom-primary) !important;
+}
+.text-dark {
+  color: var(--opticcom-dark) !important;
+}
+
+/* Bordes */
+.border-primary {
+  border-color: var(--opticcom-primary) !important;
+}
+
+/* --- Estilo de Alertas (Flash Messages) --- */
+#msg-flash {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 1050;
+  min-width: 250px;
+  opacity: 0;
+  animation: fadeInOut 5s ease-in-out;
+}
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+/* Mensaje de éxito (verde) se queda verde para no confundir */
+.alert-success {
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    color: #0f5132;
+}
